@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller // 요청/응답 제어 역할 명시 + Bean 등록 
 public class ExampleController {
 
+	// 요청주소 
+	// /todo/test/insert,    /todo/test/update,   /todo/delete
+		
+	
 	/* 1) @RequestMapping("주소")
 	 * 
 	 * 2) @GetMapping("주소") : Get(조회) 방식 요청 매핑
@@ -35,6 +39,8 @@ public class ExampleController {
 		// 접두사 : calsspath:/templates/
 		// 접미사 : .html
 		return "example"; 
+		
+		// classpath:/templates/example.html
 		
 	}
 }

@@ -4,8 +4,6 @@ import edu.kh.demo.DemoProject1Application;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 // instance : 개발자가 직접 new 연산자를 통해 만든 객체, 관리하는 객체
 
@@ -14,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 // IOC (제어의 반전) : 객체의 생성 및 생명주기의 권한이 개발자가 아닌, 프레임워크에게 있다. 
 
 @Controller // 요청/응답을 제어하는 역할인 컨트롤러임을 명시 + Bean 등록 
+//@RequestMapping("/todo")
 public class TestController {
 
     private final DemoProject1Application demoProject1Application;
@@ -54,23 +53,30 @@ public class TestController {
 		 * */
 		
 		// src/main/resources/templates/test.html
+		// src/main/resources/templates/test.html
 	
 		return "test"; // 접두사 + 반환값 + 접미사 경로의 html로 forward
 		
-		/* 접두사, 접미사, forward 설정은 View Resol*/
+		/* 접두사, 접미사, forward 설정은 View Resolver 객체가 담당 */
 	}
 	
 	// 방법2) 클래스와 메서드에 함께 작성 : 
-    // - 공통 주소를 매핑
-    // ex) /todo/insert, /todo/select, /todo/update ... 
+	// - 공통 주소를 매핑
+    // ex) /todo/insert,  /todo/select,  /todo/update ... 
     
-//    @RequestMapping("/todo")
-//    public class TestController {
-//
-//    	@RequestMapping()
-//    	
-//    }
-// 
-    
-	
+    /*
+    @RequestMapping("/todo")
+    public class TestController {
+    	
+	    @RequestMapping("/insert")
+		public String 메서드명() {}
+	    
+	    @RequestMapping("/select")
+	    public String 메서드명() {}
+	    
+	    @RequestMapping("/update")
+	    public String 메서드명() {}
+	    
+	}
+	*/
 }
