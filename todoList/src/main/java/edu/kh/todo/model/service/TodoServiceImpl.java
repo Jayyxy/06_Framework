@@ -22,7 +22,6 @@ import edu.kh.todo.model.mapper.TodoMapper;
 @Transactional(rollbackFor = Exception.class)
 @Service  // 비즈니스 로직(데이터가공, 트랜잭션 처리등) 역할 명시 + Bean 등록
 public class TodoServiceImpl implements TodoService{
-
 	@Autowired // TodoDAO와 같은 타입/상속관계 Bean 의존성 주입(DI)
 	private TodoDAO dao;
 	
@@ -79,6 +78,7 @@ public class TodoServiceImpl implements TodoService{
 	@Override
 	public int todoUpdate(Todo todo) {
 		return mapper.todoUpdate(todo);
+		
 	}
 	
 	
@@ -86,5 +86,24 @@ public class TodoServiceImpl implements TodoService{
 	public int todoDelete(int todoNo) {
 		return mapper.todoDelete(todoNo);
 	}
+	
+	@Override
+	public int getTotalCount() {
+		return mapper.getTotalCount();
+	}
+	
+	
+	@Override
+	public int getCompleteCount() {
+		return mapper.getCompleteCount();
+	}
+	
+	
+	@Override
+	public List<Todo> selectList() {
+		return mapper.selectAll();
+	}
+	
+	
 	
 }
