@@ -40,7 +40,7 @@ CREATE SEQUENCE SEQ_MEMBER_NO NOCACHE;
 INSERT INTO "MEMBER"
 VALUES(SEQ_MEMBER_NO.NEXTVAL, 
 			 'user01@kh.or.kr',
-			 '암호화된 비밀번호',
+			 'pass01!',
 			 '유저일',
 			 '01012341234',
 			 NULL,
@@ -51,6 +51,26 @@ VALUES(SEQ_MEMBER_NO.NEXTVAL,
 );
 
 COMMIT;
+
+-- 25.04.21 여기까지 수행 
+
+SELECT * FROM "MEMBER";
+
+-- 암호화된 비밀번호 (평문 : pass01!) 업데이트
+UPDATE "MEMBER" SET 
+MEMBER_PW = '$2a$10$UAaJ5h7QvgAiIh4.sqq8cuXb.wJOnomquvGthBvebvi4bgu9sYPGy'
+WHERE MEMBER_NO = 1 ; 
+
+COMMIT;
+
+-- 로그인 SQL 
+SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_NICKNAME,
+MEMBER_PW, MEMBER_TEL, MEMBER_ADDRESS, PROFILE_IMG,
+AUTHORITY,
+TO_CHAR(ENROLL_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"') ENROLL_DATE
+FROM "MEMBER"
+WHERE MEMBER_EMAIL = 'user01@kh.or.kr'
+AND MEMBER_DEL_FL = 'N'
 
 -----------------------------------------
 
@@ -317,6 +337,10 @@ REFERENCES "COMMENT" (
 );
 
 ---------------------- CHECK -----------------------
+-- 회원 탈퇴 여부 check 제약조건 추가
+ALTER TABLE "MEMBER" ADD
+CONSTRAINT "MEMBER_DEL_CHECK"
+CHECK("MEMBER_DEL_FL" IN ('Y','N'));
 
 -- 게시글 삭제 여부
 ALTER TABLE "BOARD" ADD
