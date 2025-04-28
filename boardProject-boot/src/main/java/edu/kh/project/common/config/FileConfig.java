@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import jakarta.servlet.MultipartConfigElement;
 
 @Configuration
-@PropertySource("classpath:/config.properties")
+@PropertySource ("classpath:/config.properties")
 public class FileConfig implements WebMvcConfigurer{
 	
 	// WebMvcConfigurer : Spring MVC 프레임워크에서 제공하는 인터페이스 중 하나로,
@@ -39,6 +39,7 @@ public class FileConfig implements WebMvcConfigurer{
 	
 	// -----------------------------------------------------------
 	
+	// 프로 이미지 관련 경로
 	// 요청 주소에 따라
 	// 서버 컴퓨터의 어떤 경로에 접근할지 설정
 	@Override

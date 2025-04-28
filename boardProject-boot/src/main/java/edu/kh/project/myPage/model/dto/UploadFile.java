@@ -1,4 +1,4 @@
-package edu.kh.project.mypage.model.dto;
+package edu.kh.project.myPage.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

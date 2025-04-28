@@ -116,9 +116,11 @@ public class ParameterController {
 							@RequestParam("fruit") List<String> fruitList,
 							@RequestParam Map<String, Object> paramMap) {
 							
-							
+	
+		// 배열을 한번에 출력하기 
 		log.debug("colorArr : "  + Arrays.toString(colorArr));
-							
+		
+		// 리스트인 경우 작성만 해도 한번에 출력 
 		log.debug("fruitList : "  + fruitList);
 							
 		// @RequestParam Map<String,Object> paramMap
@@ -127,7 +129,6 @@ public class ParameterController {
 		// 첫번째로 제출된 value값이 저장됨 
 		
 		log.debug("paramMap : " + paramMap);
-		
 		// {color=Red, fruit=Apple, productName=아름다운 조명, expirationDate=2025-04-24}
 	
 

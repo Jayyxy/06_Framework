@@ -1,5 +1,5 @@
 
-package edu.kh.project.myPage.controller;
+package edu.kh.project.myPage.Controller;
 
 import java.util.List;
 import java.util.Map;
@@ -300,11 +300,6 @@ public class MyPageController {
 		
 		return "myPage/myPage-fileList";
 	}
-	
-	
-	
-	
-	
 	
 	
 	
