@@ -22,14 +22,17 @@ import lombok.extern.slf4j.Slf4j;
 public class ExampleController {
 
 	/*Model(org.springframewor.ui.Model)
-	 * 
 	 * - Spring에서 데이터 전달 역할을 하는 객체
 	 * 
 	 * - 기본 scope : request
 	 * 
-	 * - @
+	 * - @SessionAttribute 와 함께 사용 시 session scope 변환 가
 	 * 
-	 * model.addAttribute("key",value);
+	 *
+	 * 
+	 * [기본 사용법]
+	 * modle.addAttribute("key", value); 
+	 * 
 	 * 
 	 * */
 	
