@@ -171,4 +171,10 @@ public class BoardServiceImpl implements BoardService{
 		
 		return map;
 	}
+	
+	@Override
+	public List<String> selectDbImageList() {
+		
+		return null;
+	}
 }

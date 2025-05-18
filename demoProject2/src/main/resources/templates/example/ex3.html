@@ -9,7 +9,7 @@
   
   <h1>타임리프 예제3</h1>
 
-  <h3>링크(url) 조함에 사용되는 Spring EL ( @{} )</h3>
+  <h3>링크(url) 조합에 사용되는 Spring EL ( @{} )</h3>
 
 
   <ul>
@@ -21,13 +21,13 @@
       <a href="/board?key=제목&query=검색어">게시판(/board)</a>
     </li>
 
-    <!-- ** 타임리프를 이용한 쿼리스트링 작성법 ** -->
+    <!-- ** 타임리프를 이용한 쿼리스트링 작성법 (?뒤의 구문) ** -->
     <li>
-      <a th:href="@{/board{key=${key}, query=${query}}}">게시판(/board)</a>
+      <a th:href="@{/board(key=${key}, query=${query})}">게시판(/board)</a>
                   <!-- /board?key=제목&query=검색어 -->
     </li>
 
-    <!-- ** 타임리프를 이용한 요청 주소 작성법 ** -->
+    <!-- ** 타임리프를 이용한 요청 주소 작성법 (?앞에 있는 주소) ** -->
     <li>
       <a th:href="@{/example/ex3/{number}(number=${boardNo})}">/example/ex3/10</a>
     </li>

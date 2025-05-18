@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 // Spring EL 같은 경우 DTO 객체 출력할 때 getter 가 필수 작성 되어있어야 함! 
 // -> ${Student.name} == ${Student.getName()}
+// 이기때문 (getter가 있어야만 출력가능)
 
 @Data // Getter + Setter + ToString 
 @NoArgsConstructor // 기본생성자
@@ -14,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class Student {
 
 		private String studentNo; // 학생 번호
-		private String nameSt;	  // 이름
+		private String name;	  // 이름
 		private int age;		  // 나이
 		
 		

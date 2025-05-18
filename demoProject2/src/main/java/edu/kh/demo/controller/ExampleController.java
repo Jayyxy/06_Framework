@@ -26,7 +26,7 @@ public class ExampleController {
 	 * 
 	 * - 기본 scope : request
 	 * 
-	 * - @SessionAttribute 와 함께 사용 시 session scope 변환 가
+	 * - @SessionAttribute 와 함께 사용 시 session scope 변환 가능 
 	 * 
 	 *
 	 * 
@@ -62,7 +62,7 @@ public class ExampleController {
 		
 		Student std = new Student();
 		std.setStudentNo("12345");
-		std.setNameSt("홍길동");
+		std.setName("홍길동");
 		std.setAge(22);
 		
 		model.addAttribute("std",std);

@@ -77,7 +77,11 @@ public interface BoardMapper {
 	 */
 	List<Board> selectBoardList(Map<String, Object> paramMap, RowBounds rowBounds);
 	
-	
+	/**
+	 * 
+	 * @return
+	 */
+	List<String> selectDbImageList();
 	
 	
 	
